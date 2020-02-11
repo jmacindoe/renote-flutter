@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renote/search/NoteSearchDelegate.dart';
 import 'package:renote/strings.dart';
 
 class Home extends StatelessWidget {
@@ -6,7 +7,12 @@ class Home extends StatelessWidget {
     // TODO
   }
 
-  _searchRequested() {}
+  _searchRequested(BuildContext context) {
+    showSearch(
+      context: context,
+      delegate: NoteSearchDelegate(),
+    );
+  }
 
   _reviewRequested() {}
 
@@ -16,7 +22,9 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text(Strings.appName),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: _searchRequested)
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () => _searchRequested(context))
         ],
       ),
       body: Center(
