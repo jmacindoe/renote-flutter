@@ -2,15 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:renote/strings.dart';
 
 class Home extends StatelessWidget {
-  _addNote() {
+  _addNoteRequested() {
     // TODO
   }
+
+  _searchRequested() {}
+
+  _reviewRequested() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(Strings.appName),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.search), onPressed: _searchRequested)
+        ],
       ),
       body: Center(
         child: Column(
@@ -20,15 +27,16 @@ class Home extends StatelessWidget {
               'Notes due today: n',
               style: Theme.of(context).textTheme.display1,
             ),
-            Text(
-              'Start review button',
-            ),
+            RaisedButton(
+              onPressed: _reviewRequested,
+              child: Text(Strings.home.startReview),
+            )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _addNote,
-        tooltip: Strings.addNoteTooltip,
+        onPressed: _addNoteRequested,
+        tooltip: Strings.home.addNoteTooltip,
         child: Icon(Icons.add),
       ),
     );
