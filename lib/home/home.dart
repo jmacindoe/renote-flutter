@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:renote/model/Note.dart';
 import 'package:renote/search/NoteSearchDelegate.dart';
+import 'package:renote/search/SearchBloc.dart';
 import 'package:renote/strings.dart';
 
 class Home extends StatelessWidget {
@@ -7,11 +10,13 @@ class Home extends StatelessWidget {
     // TODO
   }
 
-  _searchRequested(BuildContext context) {
-    showSearch(
+  _searchRequested(BuildContext context) async {
+    final Note result = await showSearch(
       context: context,
-      delegate: NoteSearchDelegate(),
+      delegate: NoteSearchDelegate(BlocProvider.of<SearchBloc>(context)),
     );
+
+    // TODO: open editor on result
   }
 
   _reviewRequested() {}

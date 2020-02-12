@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renote/di/renote_bloc_provider.dart';
 
 import 'home/home.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: RenoteBlocProvider(child: Home()),
     );
   }
 }
