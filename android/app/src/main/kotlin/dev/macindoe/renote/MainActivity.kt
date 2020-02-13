@@ -1,4 +1,4 @@
-package com.example.renote
+package dev.macindoe.renote
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
