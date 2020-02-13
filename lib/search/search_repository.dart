@@ -1,4 +1,4 @@
-import 'package:renote/model/Note.dart';
+import 'package:renote/data/note/models/note.dart';
 
 class SearchRepository {
   Future<List<Note>> search(String query) {

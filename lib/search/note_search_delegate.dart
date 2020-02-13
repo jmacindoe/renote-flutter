@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:renote/model/Note.dart';
+import 'package:renote/data/note/models/note.dart';
 import 'package:renote/search/search_bloc.dart';
 import 'package:renote/search/search_event.dart';
 import 'package:renote/search/search_state.dart';

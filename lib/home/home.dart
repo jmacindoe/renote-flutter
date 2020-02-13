@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:renote/data/note/models/note.dart';
 import 'package:renote/editor/editor.dart';
-import 'package:renote/model/Note.dart';
 import 'package:renote/search/note_search_delegate.dart';
 import 'package:renote/search/search_bloc.dart';
 import 'package:renote/strings.dart';

@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:optional/optional.dart';
+import 'package:renote/data/note/models/note.dart';
 import 'package:renote/editor/editor_event.dart';
 import 'package:renote/editor/editor_state.dart';
-import 'package:renote/model/Note.dart';
 
 class EditorBloc extends Bloc<EditorEvent, EditorState> {
   final Note initialNote;
