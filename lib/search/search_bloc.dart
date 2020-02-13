@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:renote/model/Note.dart';
-import 'package:renote/search/SearchEvent.dart';
-import 'package:renote/search/SearchRepository.dart';
-import 'package:renote/search/SearchState.dart';
+import 'package:renote/search/search_event.dart';
+import 'package:renote/search/search_repository.dart';
+import 'package:renote/search/search_state.dart';
 
+// TODO: rename files
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final SearchRepository _searchRepository;
 

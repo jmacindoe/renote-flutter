@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:renote/editor/editor.dart';
 import 'package:renote/model/Note.dart';
-import 'package:renote/search/NoteSearchDelegate.dart';
-import 'package:renote/search/SearchBloc.dart';
+import 'package:renote/search/note_search_delegate.dart';
+import 'package:renote/search/search_bloc.dart';
 import 'package:renote/strings.dart';
 
 class Home extends StatelessWidget {

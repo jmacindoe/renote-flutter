@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:renote/search/SearchBloc.dart';
-import 'package:renote/search/SearchRepository.dart';
+import 'package:renote/search/search_bloc.dart';
+import 'package:renote/search/search_repository.dart';
 
 class RenoteBlocProvider extends StatelessWidget {
   final Widget child;
