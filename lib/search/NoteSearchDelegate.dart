@@ -63,7 +63,7 @@ class NoteSearchDelegate extends SearchDelegate<Note> {
               itemBuilder: (context, index) {
                 final result = results[index];
                 return ListTile(
-                  title: Text(result.text),
+                  title: Text(result.body),
                   onTap: () => close(context, result),
                 );
               },

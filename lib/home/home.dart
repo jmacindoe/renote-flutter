@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:renote/editor/editor.dart';
 import 'package:renote/model/Note.dart';
 import 'package:renote/search/NoteSearchDelegate.dart';
 import 'package:renote/search/SearchBloc.dart';
 import 'package:renote/strings.dart';
 
 class Home extends StatelessWidget {
-  _addNoteRequested() {
-    // TODO
+  _addNoteRequested(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => Editor()));
   }
 
   _searchRequested(BuildContext context) async {
-    final Note result = await showSearch(
+    final Note note = await showSearch(
       context: context,
       delegate: NoteSearchDelegate(BlocProvider.of<SearchBloc>(context)),
     );
-
-    // TODO: open editor on result
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => Editor(note: note)));
   }
 
   _reviewRequested() {}
@@ -48,7 +50,7 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _addNoteRequested,
+        onPressed: () => _addNoteRequested(context),
         tooltip: Strings.home.addNoteTooltip,
         child: Icon(Icons.add),
       ),
