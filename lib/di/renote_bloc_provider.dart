@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:renote/auth/auth_bloc.dart';
+import 'package:renote/auth/auth_event.dart';
+import 'package:renote/auth/user_repository.dart';
 import 'package:renote/search/search_bloc.dart';
 import 'package:renote/search/search_repository.dart';
 
@@ -14,7 +17,10 @@ class RenoteBlocProvider extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => SearchBloc(SearchRepository()),
-        )
+        ),
+        BlocProvider(
+            create: (context) =>
+                AuthBloc(userRepository: UserRepository())..add(AppStarted())),
       ],
       child: child,
     );
