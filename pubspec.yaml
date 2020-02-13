@@ -27,7 +27,9 @@ dependencies:
   bloc: ^3.0.0
   flutter_bloc: ^3.1.0
   optional: ^4.0.1
+  time_machine: ^0.9.12
   firebase_auth: ^0.15.4
+  cloud_firestore: ^0.13.2+1
 
 dev_dependencies:
   flutter_test:

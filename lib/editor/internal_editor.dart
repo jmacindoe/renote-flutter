@@ -25,12 +25,9 @@ class _InternalEditorState extends State<StatefulWidget> {
 
   _discardEdit(BuildContext context) {
     final EditorBloc bloc = BlocProvider.of<EditorBloc>(context);
-    final String uneditedBody = bloc.initialNote?.body ?? "";
-    final Optional<int> uneditedDueDays =
-        Optional.ofNullable(bloc.initialNote?.due);
     // TODO: UI tests for this
-    if (bloc.state.body != uneditedBody ||
-        bloc.state.dueDays != uneditedDueDays) {
+    if (bloc.state.body != bloc.uneditedBody ||
+        bloc.state.dueDays != bloc.uneditedDueDays) {
       _showConfirmDiscardDialog(context);
     } else {
       bloc.add(FinishedEditingEvent());

@@ -1,6 +1,7 @@
 class ErrorReporter {
-  static reportError(dynamic error) {
+  static reportError(Object error, [StackTrace stacktrace]) {
     // TODO; report to Crashlytics
     print(error);
+    print(stacktrace);
   }
 }
