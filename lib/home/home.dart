@@ -17,8 +17,11 @@ class Home extends StatelessWidget {
       context: context,
       delegate: NoteSearchDelegate(BlocProvider.of<SearchBloc>(context)),
     );
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => Editor(note: note)));
+
+    if (note != null) {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Editor(note: note)));
+    }
   }
 
   _reviewRequested() {}
