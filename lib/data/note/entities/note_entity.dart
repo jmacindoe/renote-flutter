@@ -34,8 +34,8 @@ class NoteEntity {
   static NoteEntity fromSnapshot(DocumentSnapshot snap) {
     return NoteEntity(
       id: snap.documentID,
-      createdAt: snap['createdAt'],
-      lastUpdatedAt: snap['lastUpdatedAt'],
+      createdAt: snap['createdAt'].toDate(),
+      lastUpdatedAt: snap['lastUpdatedAt'].toDate(),
       deckId: snap['deckId'],
       nextDue: snap['nextDue'],
       dueEveryDays: snap['dueEveryDays'],
