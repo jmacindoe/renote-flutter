@@ -5,4 +5,7 @@ class DueData {
   final int dueEveryDays;
 
   DueData(this.nextDue, this.dueEveryDays);
+
+  @override
+  String toString() => 'DueData nextDue: $nextDue, dueEveryDays: $dueEveryDays';
 }

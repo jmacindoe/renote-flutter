@@ -1,7 +1,10 @@
 abstract class SearchEvent {}
 
 class SearchQueryUpdated extends SearchEvent {
+  final String newQuery;
+
   SearchQueryUpdated(this.newQuery);
 
-  final String newQuery;
+  @override
+  String toString() => 'SearchQueryUpdated newQuery: $newQuery';
 }
