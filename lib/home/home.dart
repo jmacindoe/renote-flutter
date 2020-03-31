@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:renote/data/note/models/note.dart';
 import 'package:renote/editor/editor.dart';
+import 'package:renote/review/review.dart';
 import 'package:renote/search/note_search_delegate.dart';
 import 'package:renote/search/search_bloc.dart';
 import 'package:renote/strings.dart';
@@ -24,7 +26,10 @@ class Home extends StatelessWidget {
     }
   }
 
-  _reviewRequested() {}
+  _reviewRequested(BuildContext context) {
+    Navigator.of(context)
+        .push(CupertinoPageRoute(builder: (context) => Review()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +51,7 @@ class Home extends StatelessWidget {
               style: Theme.of(context).textTheme.display1,
             ),
             RaisedButton(
-              onPressed: _reviewRequested,
+              onPressed: () => _reviewRequested(context),
               child: Text(Strings.home.startReview),
             )
           ],

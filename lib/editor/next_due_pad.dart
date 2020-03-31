@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:optional/optional.dart';
 
 final List<int> _options = [
+  0,
   1,
   2,
   3,
@@ -21,7 +22,6 @@ final List<int> _options = [
   35,
   40,
   50,
-  100
 ];
 
 class NextDuePad extends StatelessWidget {

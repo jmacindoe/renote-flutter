@@ -3,6 +3,7 @@ class Strings {
   static final home = HomeStrings();
   static final search = SearchStrings();
   static final editor = EditorStrings();
+  static final review = ReviewStrings();
 }
 
 class HomeStrings {
@@ -22,4 +23,8 @@ class EditorStrings {
   final confirmDiscardAddTitle = "Discard note?";
   final confirmDiscardConfirmAction = "Discard";
   final confirmDiscardAbortAction = "Keep editing";
+}
+
+class ReviewStrings {
+  final screenName = "Review";
 }
